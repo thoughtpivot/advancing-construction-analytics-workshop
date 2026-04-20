@@ -1,0 +1,543 @@
+/* Brand-adjacent tokens: intelligence layer / AEC enterprise (visual only — no logo dependency) */
+
+:root {
+  --tp-bg: #0c0f14;
+  --tp-bg-elevated: #121722;
+  --tp-text: #e8ecf4;
+  --tp-muted: #8b95a8;
+  --tp-accent: #3d9cf0;
+  --tp-accent-dim: rgba(61, 156, 240, 0.14);
+  --tp-border: rgba(232, 236, 244, 0.08);
+  --tp-grid: rgba(232, 236, 244, 0.04);
+  --slidev-theme-primary: var(--tp-accent);
+}
+
+html,
+body,
+#slide-content,
+.slidev-layout {
+  background-color: var(--tp-bg) !important;
+  color: var(--tp-text);
+}
+
+.slidev-page {
+  background-color: var(--tp-bg);
+  background-image:
+    linear-gradient(var(--tp-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--tp-grid) 1px, transparent 1px),
+    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(61, 156, 240, 0.08), transparent 55%);
+  background-size: 48px 48px, 48px 48px, 100% 100%;
+  background-position: center top, center top, center top;
+}
+
+/* Default + center layouts: predictable inset so nothing hugs the chrome */
+.slidev-layout.default,
+.slidev-layout.center {
+  box-sizing: border-box;
+  padding-bottom: 2.5rem;
+}
+
+/* Closing slide: `center` layout ignores frontmatter `class` — wrap content in .tp-final-slide */
+.slidev-layout.center .tp-final-slide {
+  text-align: center;
+  max-width: 52rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
+
+.slidev-layout.center .tp-final-slide h1 {
+  margin-bottom: 0.35rem !important;
+}
+
+.slidev-layout.center .tp-final-slide .tp-title-accent {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.slidev-layout.center .tp-final-quote {
+  color: var(--tp-text);
+}
+
+.slidev-layout.center .tp-final-quote p {
+  margin: 0;
+}
+
+/* Slide 4+ style two-column block (default layout — avoids two-cols slot quirks) */
+.tp-two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 1.75rem 2rem;
+  align-items: start;
+  margin-top: 0.35rem;
+  width: 100%;
+}
+
+.tp-two-col-main,
+.tp-two-col-aside {
+  min-width: 0;
+}
+
+.tp-two-col-aside .tp-card {
+  min-height: 0;
+}
+
+/* Mermaid / diagrams */
+.tp-diagram {
+  max-width: 100%;
+  overflow-x: auto;
+  margin-top: 0.5rem;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--tp-text) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+}
+
+p,
+li {
+  color: var(--tp-text);
+}
+
+.slidev-layout a {
+  color: var(--tp-accent);
+}
+
+.tp-muted {
+  color: var(--tp-muted);
+}
+
+.tp-title-lead {
+  border-left: 3px solid var(--tp-accent);
+  padding-left: 1.25rem;
+  margin-left: -0.15rem;
+}
+
+.tp-title-lead h1 {
+  font-size: clamp(1.35rem, 2.35vw, 2rem) !important;
+  line-height: 1.18 !important;
+  max-width: 55rem;
+}
+
+.tp-title-accent {
+  border-bottom: 1px solid var(--tp-border);
+  padding-bottom: 2rem;
+}
+
+.tp-orchestration-lede-block {
+  margin-top: -0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.tp-orchestration-lede-block > p:first-child {
+  margin: 0 0 0.2rem;
+  line-height: 1.35;
+}
+
+.tp-orchestration-strategy {
+  margin: 0 0 0.3rem;
+  line-height: 1.38;
+  max-width: 52rem;
+}
+
+.tp-orchestration-lede-sub {
+  margin: 0 !important;
+  opacity: 0.92;
+}
+
+.tp-orchestration-summary {
+  margin-top: 0.55rem;
+  font-size: 0.66rem;
+  line-height: 1.28;
+  border: 1px solid var(--tp-border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--tp-bg-elevated);
+}
+
+.tp-orchestration-summary-row {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr 1fr;
+  gap: 0.35rem 0.45rem;
+  padding: 0.28rem 0.45rem;
+  border-bottom: 1px solid var(--tp-border);
+  color: var(--tp-muted);
+  align-items: start;
+}
+
+.tp-orchestration-summary-row:last-child {
+  border-bottom: none;
+}
+
+.tp-orchestration-summary-head {
+  background: rgba(18, 23, 34, 0.85);
+  font-weight: 700;
+  color: var(--tp-accent) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.6rem;
+}
+
+.tp-orchestration-summary-row strong {
+  color: var(--tp-text);
+}
+
+.tp-tier-card-note {
+  list-style: none;
+  margin-left: -1rem;
+  padding-left: 0.25rem;
+  font-size: 0.68rem;
+  font-style: italic;
+  color: var(--tp-muted);
+  margin-top: 0.15rem;
+}
+
+.tp-kicker {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tp-muted);
+  margin-bottom: 0.75rem;
+}
+
+/* Segment rail (Parts 1–3 + close) — consistent across slides */
+.tp-segment {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tp-accent);
+  margin: 0 0 0.35rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--tp-border);
+  max-width: 28rem;
+}
+
+.tp-segment--close {
+  color: var(--tp-muted);
+  border-bottom-color: var(--tp-border);
+}
+
+.tp-segment--intro {
+  color: var(--tp-muted);
+  border-bottom: none;
+  padding-bottom: 0;
+  max-width: none;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+}
+
+.tp-slide-subtitle {
+  font-size: 0.95rem;
+  color: var(--tp-muted);
+  margin: -0.25rem 0 0.75rem;
+  line-height: 1.35;
+}
+
+.tp-time-pill {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 0.35rem;
+  background: var(--tp-accent-dim);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--tp-accent);
+  vertical-align: middle;
+}
+
+/* Orchestration: tier strip (default 3-col; use --two on slide for binary layout) */
+.tp-tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+  align-items: stretch;
+}
+
+.tp-tier-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tp-tier-grid--two .tp-tier-card {
+  font-size: 0.74rem;
+  line-height: 1.34;
+  padding: 0.5rem 0.58rem;
+}
+
+.tp-tier-grid--two .tp-tier-card ul {
+  font-size: 0.7rem;
+}
+
+@media (max-width: 900px) {
+  .tp-tier-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tp-tier-grid--two {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tp-tier-card {
+  background: var(--tp-bg-elevated);
+  border: 1px solid var(--tp-border);
+  border-radius: 0.65rem;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.78rem;
+  line-height: 1.38;
+  min-width: 0;
+}
+
+.tp-tier-card h3 {
+  font-size: 0.72rem !important;
+  margin: 0 0 0.35rem !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tp-accent) !important;
+}
+
+.tp-tier-card ul {
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--tp-muted);
+  font-size: 0.74rem;
+}
+
+.tp-tier-card li {
+  margin: 0.15rem 0;
+}
+
+/* Example / insight cards (reuse scenario-adjacent look) */
+.tp-example-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.65rem;
+}
+
+@media (max-width: 900px) {
+  .tp-example-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tp-example-card {
+  background: var(--tp-bg-elevated);
+  border: 1px solid var(--tp-border);
+  border-radius: 0.65rem;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.78rem;
+  line-height: 1.38;
+}
+
+.tp-example-card h4 {
+  font-size: 0.8rem !important;
+  margin: 0 0 0.35rem !important;
+  color: var(--tp-text) !important;
+}
+
+.tp-checklist-diagram {
+  margin-top: 0.5rem;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.tp-accent-pill {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--tp-accent-dim);
+  color: var(--tp-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(61, 156, 240, 0.35);
+}
+
+.tp-footer {
+  margin-top: 2rem;
+  padding-top: 0.65rem;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: var(--tp-muted);
+  border-top: 1px solid var(--tp-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.tp-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem 1rem;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 1100px) {
+  .tp-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tp-card-grid-compact .tp-card {
+  min-height: 0;
+}
+
+/* Scenario cards slide: fit 16:9 without overflow (frontmatter class: tp-scenario-slide) */
+.slidev-layout.default.tp-scenario-slide,
+.tp-scenario-slide {
+  text-align: left;
+}
+
+.tp-scenario-slide h1 {
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem) !important;
+  line-height: 1.12 !important;
+  margin: 0 0 0.35rem !important;
+}
+
+.tp-scenario-slide--stacked h1 {
+  font-size: clamp(1.15rem, 2vw, 1.55rem) !important;
+  margin: 0 0 0.2rem !important;
+}
+
+.tp-scenario-slide--stacked .tp-scenario-root {
+  margin-top: 0;
+}
+
+.tp-scenario-slide .tp-kicker,
+.tp-scenario-slide .tp-segment {
+  margin-bottom: 0.4rem;
+}
+
+.tp-scenario-root {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.tp-scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem 0.65rem;
+  width: 100%;
+  min-width: 0;
+  align-items: stretch;
+  margin-top: 0.15rem;
+}
+
+.tp-scenario-alternates-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0.45rem 0 0.2rem;
+  line-height: 1.3;
+}
+
+.tp-scenario-grid--alternates {
+  margin-top: 0;
+}
+
+.tp-scenario-grid--alternates .tp-scenario-card {
+  font-size: 0.72rem;
+  line-height: 1.32;
+}
+
+.tp-scenario-grid--alternates .tp-scenario-card-title {
+  font-size: 0.76rem !important;
+}
+
+.tp-scenario-card {
+  min-height: 0 !important;
+  padding: 0.55rem 0.65rem !important;
+  font-size: 0.78rem;
+  line-height: 1.38;
+  overflow-wrap: anywhere;
+}
+
+.tp-scenario-card-title {
+  margin: 0 0 0.35rem !important;
+  padding: 0 !important;
+  font-size: 0.82rem !important;
+  line-height: 1.25 !important;
+  font-weight: 700 !important;
+  color: var(--tp-text) !important;
+  letter-spacing: 0 !important;
+}
+
+.tp-scenario-line {
+  margin: 0.2rem 0 0 !important;
+  color: var(--tp-muted);
+}
+
+.tp-scenario-line:first-of-type {
+  margin-top: 0 !important;
+}
+
+.tp-scenario-label {
+  display: inline-block;
+  min-width: 3.25rem;
+  margin-right: 0.25rem;
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tp-accent);
+}
+
+.tp-scenario-card strong {
+  color: var(--tp-text);
+}
+
+@media (max-width: 980px) {
+  .tp-scenario-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tp-card {
+  background: var(--tp-bg-elevated);
+  border: 1px solid var(--tp-border);
+  border-radius: 0.75rem;
+  padding: 0.85rem 0.95rem;
+  min-height: 10.5rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.tp-card h3 {
+  font-size: 1rem !important;
+  margin-bottom: 0.5rem;
+}
+
+.tp-card ul {
+  font-size: 0.88rem;
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--tp-muted);
+}
+
+.tp-card strong {
+  color: var(--tp-text);
+}
+
+.tp-card-aside {
+  margin-top: 0;
+}
+
+.tp-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  font-size: 0.9em;
+  color: var(--tp-accent);
+}

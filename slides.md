@@ -77,12 +77,6 @@ Event alignment: tie “data insight accessibility” to analytics adoption in o
 
 </div>
 
-<div v-click class="tp-muted mt-4">
-
-**Through-line:** **product thinking in construction**—systems people will actually run, not slide-ware.
-
-</div>
-
 <!--
 Part 1 closing: invite one concrete “ship story” if the room asks.
 -->

@@ -12,6 +12,13 @@
   --slidev-theme-primary: var(--tp-accent);
 }
 
+/* v-click targets: slightly longer fade so auto-advance (setup/main.ts) reads clearly */
+.slidev-vclick-target {
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease;
+}
+
 html,
 body,
 #slide-content,

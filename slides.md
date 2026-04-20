@@ -10,6 +10,8 @@ info: |
   **Creating Robust Agentic AI Systems to Increase Data Insight Accessibility**  
   *Also known as: Building Agentic Solutions for Construction*
 
+  Analytics leaders are pushing **data-driven decisions** across the enterprise—for AEC that still means **field, trailer, and finance** working off the same facts. **Accessibility of insight** (not only raw tables) is the bottleneck; **agents and generative surfaces** help when outputs stay **accurate, grounded, and governable**.
+
   Robust agentic systems and accessible data insight for AEC.
 class: text-left
 transition: fade-out
@@ -27,7 +29,7 @@ duration: 120min
 
 <p class="tp-muted text-xl mt-2">Also known as: <em>Building Agentic Solutions for Construction</em></p>
 
-<div class="tp-accent-pill mt-8">Accessible insight · Production-grade agents</div>
+<div class="tp-accent-pill mt-8">Accessible insight · Analytics adoption · Production-grade agents</div>
 
 </div>
 
@@ -35,6 +37,8 @@ duration: 120min
 Part 1 intro timing: 0:00–0:10
 
 Hook: Construction is decision-heavy and document-dense. In 2026 we build systems that work—not only chat.
+
+Event alignment: tie “data insight accessibility” to analytics adoption in operations; preview that later we cover deterministic-enough behavior (patterns + evals), build vs buy, and measurable pilots—not hype.
 -->
 
 ---
@@ -91,7 +95,7 @@ Part 1 closing: invite one concrete “ship story” if the room asks.
 
 <div class="tp-orchestration-lede-block">
 <p class="tp-muted text-sm">In 2026 the battleground is <strong>who controls context and workflow</strong>—not which foundation model “wins.”</p>
-<p class="tp-muted text-xs tp-orchestration-strategy"><strong>Strategy:</strong> choose <strong>off-the-shelf</strong> when the problem already fits the vendor’s graph and speed beats differentiation. Choose <strong>hands-on</strong> when workflow, data, or economics must be yours—or you share the same packaged intelligence as everyone else.</p>
+<p class="tp-muted text-xs tp-orchestration-strategy"><strong>Strategy:</strong> choose <strong>off-the-shelf</strong> when the problem already fits the vendor’s graph and speed beats differentiation. Choose <strong>hands-on</strong> when workflow, data, economics, or <strong>deep internal business knowledge</strong> must be yours—or you share the same packaged intelligence as everyone else.</p>
 <p class="tp-muted text-xs tp-mono tp-orchestration-lede-sub">LLM = engine · orchestration = transmission</p>
 </div>
 
@@ -117,7 +121,7 @@ Part 1 closing: invite one concrete “ship story” if the room asks.
 <ul>
 <li><strong>Workflow you encode</strong> — treat logic as a <strong>state machine</strong>, not a wall of prompt. Example: submittal — <strong>spec → extract → compare → if deviation &gt; threshold → human</strong>. Stack: <strong>LangGraph</strong> / <strong>LangChain</strong>, <strong>AWS Agent Core</strong>, <strong>Temporal</strong> + <strong>n8n</strong>/<strong>Windmill</strong> for durable glue</li>
 <li><strong>Typed + multi-agent</strong> — <strong>Pydantic AI</strong> (ERP-safe I/O), <strong>CrewAI</strong> (roles and handoffs)</li>
-<li><strong>Integration boundary</strong> — <strong>custom MCP</strong> (Python/Node) for wholesale APS / Procore APIs vs throttled vendor MCP—full story on the MCP slide</li>
+<li><strong>Integration boundary</strong> — <strong>custom MCP</strong> (Python/Node) for wholesale APS / Procore APIs vs throttled vendor MCP; connect <strong>internal + third-party</strong> systems and <strong>lake/warehouse</strong> views so stakeholders can <strong>ask data</strong> without living in SQL—full story on the MCP slide</li>
 <li><strong>Product surface</strong> — <strong>Vercel AI SDK</strong> + bespoke UI (e.g. superintendent: <strong>Check safety · Summarize daily · Order materials</strong>)—tools, not a thread. Heatmap / silent auditor patterns — <em>next slide</em></li>
 <li><strong>Capacity under load</strong> — e.g. <strong>Bedrock provisioned throughput</strong> when crunch beats public rate limits (<em>inference slide</em>)</li>
 </ul>
@@ -158,6 +162,8 @@ Facilitator moat line: If you only use off-the-shelf, you share the same package
 
 Cross-ref: "Beyond the chatbot" slide expands artifact-first and role-specific surfaces.
 
+Hands-on rationale (event staff echo): in-house orchestration is how you fold **proprietary process + historical context** into agents the vendor will never ship generic.
+
 Inference slide owns full Anthropic vs Bedrock economics; this slide only teases provisioned throughput as "dedicated pipe under load."
 -->
 
@@ -168,6 +174,12 @@ Inference slide owns full Anthropic vs Bedrock economics; this slide only teases
 # Beyond the chatbot
 
 <p class="tp-muted">Role-appropriate surfaces — not “chat bad,” but “chat is one option”</p>
+
+<div v-click>
+
+**Conversational analytics:** when the surface <em>is</em> chat, **context and specificity** (what project, what time range, which source of truth) **directly shape** output quality—brief users once; don’t assume “the AI knows.”
+
+</div>
 
 <div v-click>
 
@@ -231,6 +243,8 @@ Classic **email + distribution lists** work until volume and revision churn win.
 
 <!--
 Speaker: PE vs super vs foreman — three different “right” surfaces for the same company.
+
+Event alignment: “conversational analytics” stays honest when retrieval scope, time window, and SoT are explicit—same theme as guardrails later.
 -->
 
 ---
@@ -249,13 +263,13 @@ Speaker: PE vs super vs foreman — three different “right” surfaces for the
 
 <div v-click>
 
-**Build path:** **Custom integrations** (including **MCP servers**) to **APS**, **ERP** read models, **warehouse** views—**your** auth, caching, pagination, and **policy**. Sometimes you can **beat** packaged assistants on **latency and unit economics**—sometimes not; **prototype both**.
+**Build path:** **Custom integrations** (including **MCP servers**) across **internal systems and third-party platforms**—**APS**, **ERP** read models, **lake / warehouse** views—**your** auth, caching, pagination, and **policy**. Sometimes you can **beat** packaged assistants on **latency and unit economics**—sometimes not; **prototype both**.
 
 </div>
 
 <div v-click>
 
-**Decision lens:** integration **surface area** (how many systems?), **compliance**, **rate limits**, and whether the vendor’s “happy path” matches your **WBS / CM** reality.
+**Decision lens:** **technical capability** and **strategic fit**; integration **surface area** (how many systems?), **compliance**, **rate limits**, and whether the vendor’s “happy path” matches your **WBS / CM** reality.
 
 </div>
 
@@ -272,6 +286,8 @@ Speaker: PE vs super vs foreman — three different “right” surfaces for the
 
 <!--
 Drop single-vendor war stories unless cleared for the room; keep trade-off framing.
+
+Event alignment: cross-enterprise connectivity = internal + third-party in one governed boundary; “ask data” without eroding trust is a product decision not a model pick.
 -->
 
 ---
@@ -321,11 +337,17 @@ flowchart LR
 
 </div>
 
+<!--
+Event alignment: production gateways are where **instruction**, policy, and guardrails meet the model—same slide as economics; remind room “cheap API” ≠ “safe default.”
+-->
+
 ---
 
 <div class="tp-segment">Part 2 · Strategy</div>
 
 # Model selection — right engine, right hill
+
+<p class="tp-muted text-sm">Models are stochastic—<strong>reliable systems</strong> come from <strong>router / worker / judge</strong>, schemas, and <strong>eval loops</strong>, not from pretending the LLM is a calculator.</p>
 
 <div class="tp-diagram">
 
@@ -383,6 +405,12 @@ flowchart TB
 <div v-click>
 
 **Fine-tune when:** you need a **hard format contract** or **massive** repetitive micro-tasks where **latency/cost** dominates.
+
+</div>
+
+<div v-click>
+
+**Trust before weights:** **guardrails**, structured outputs, and **eval + reasoning loops** with human gates—**instruction** and ICL usually move accuracy more than fine-tune; don’t erode **stakeholder confidence** chasing novelty.
 
 </div>
 
@@ -479,6 +507,8 @@ class: tp-scenario-slide tp-scenario-slide--stacked
 Assumptions: workshop outputs are POCs only—not legal, compliance, or warranty advice. Encourage identifying source of truth and data residency up front.
 
 Alternates: use row 2 if you have six tables, a makeup session, or want variety—same rubric applies.
+
+Event alignment: scenarios are stand-ins for **high-impact use cases**—push each group to name **one pilot metric** (hours, error rate, adoption) so AI investment stays defensible.
 -->
 
 ---
@@ -487,7 +517,7 @@ Alternates: use row 2 if you have six tables, a makeup session, or want variety�
 
 # Critique rubric
 
-<p class="tp-slide-subtitle">After groups present — use this to score designs in ~2 minutes each.</p>
+<p class="tp-slide-subtitle">After groups present — use this to score designs in ~2 minutes each. Favor ideas with a <strong>clear pilot metric</strong> (time saved, defect rate, adoption) so spend stays justified.</p>
 
 <div v-click>
 
@@ -513,6 +543,16 @@ Alternates: use row 2 if you have six tables, a makeup session, or want variety�
 
 </div>
 
+<div v-click>
+
+5. **Outcome:** what **measurable** result unlocks the next funding or scale gate?
+
+</div>
+
+<!--
+Event alignment: rubric = continuous justification for AI—tie each design to a metric leadership can recognize.
+-->
+
 ---
 layout: center
 ---
@@ -530,6 +570,11 @@ Your job is not to be an AI **user**. It is to be a **practitioner**: build brid
 </div>
 
 <p class="tp-muted mt-10 text-sm tracking-wide">Data insight accessibility · AEC · Own the graph</p>
+
+<p class="tp-muted mt-6 text-sm leading-relaxed max-w-3xl mx-auto">
+  <a href="https://www.linkedin.com/in/ispyhumanfly/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/ispyhumanfly/</a>
+  <span class="block sm:inline sm:ml-1 mt-2 sm:mt-0">or email me at <a href="mailto:dan@thoughtpivot.com">dan@thoughtpivot.com</a>.</span>
+</p>
 
 </div>
 

@@ -73,7 +73,7 @@ Event alignment: tie “data insight accessibility” to analytics adoption in o
 
 <div v-click>
 
-**Today:** building **agentic AI** for GC workflows—especially **preconstruction** and **submittals**—plus **competitive intelligence** for **BD and strategy** in AEC.
+**Today:** building **agentic AI** solutions for **AEC strategy professionals**—with a special focus on **competitive intelligence tools** that empower **BD and strategic decision-makers**, as well as on enhancing **preconstruction workflows** for greater efficiency and insight.
 
 </div>
 

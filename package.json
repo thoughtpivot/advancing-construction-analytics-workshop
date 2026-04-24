@@ -5,7 +5,8 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev",
-    "export": "slidev export"
+    "export:pdf": "slidev export slides.md --output \"docs/ACA ThoughtPivot Building Agentic Solutions for Construction.pdf\" --format pdf --dark",
+    "export": "npm run export:pdf"
   },
   "dependencies": {
     "@slidev/cli": "^52.14.2",

@@ -21,6 +21,12 @@ duration: 120min
 
 <div class="tp-title-lead">
 
+<div class="tp-intro-brand">
+  <a class="tp-intro-brand__link" href="https://www.thoughtpivot.com" target="_blank" rel="noopener noreferrer" aria-label="ThoughtPivot">
+    <img class="tp-intro-brand__logo" src="/tp-white.svg" width="280" height="45" alt="ThoughtPivot">
+  </a>
+</div>
+
 <div class="tp-segment tp-segment--intro">Part 1 · Intro</div>
 
 <div class="tp-kicker">Construction · Agentic AI · Data insight</div>

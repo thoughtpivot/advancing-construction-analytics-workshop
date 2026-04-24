@@ -37,11 +37,12 @@ body,
   background-position: center top, center top, center top;
 }
 
-/* Default + center layouts: predictable inset so nothing hugs the chrome */
+/* Default + center layouts: predictable inset so nothing hugs the chrome or footer mark */
 .slidev-layout.default,
 .slidev-layout.center {
   box-sizing: border-box;
-  padding-bottom: 2.5rem;
+  /* Extra bottom inset so last lines clear the small TP mark (see .tp-deck-footermark) */
+  padding-bottom: 3.5rem;
 }
 
 /* Closing slide: `center` layout ignores frontmatter `class` — wrap content in .tp-final-slide */
@@ -116,6 +117,57 @@ li {
 
 .tp-muted {
   color: var(--tp-muted);
+}
+
+/* ThoughtPivot mark — slides 2+ (slide 1 uses .tp-intro-brand) */
+.tp-deck-footermark {
+  position: fixed;
+  right: 0.75rem;
+  bottom: 0.55rem;
+  z-index: 35;
+  pointer-events: none;
+}
+
+.tp-deck-footermark__link {
+  display: block;
+  line-height: 0;
+  pointer-events: auto;
+  opacity: 0.78;
+  transition: opacity 0.16s ease;
+}
+
+.tp-deck-footermark__link:hover {
+  opacity: 1;
+}
+
+.tp-deck-footermark__logo {
+  display: block;
+  height: 0.88rem;
+  width: auto;
+  max-width: 6.75rem;
+}
+
+.tp-intro-brand {
+  margin: 0 0 1.25rem;
+  line-height: 0;
+}
+
+.tp-intro-brand__link {
+  display: inline-block;
+  line-height: 0;
+  opacity: 0.95;
+  transition: opacity 0.16s ease;
+}
+
+.tp-intro-brand__link:hover {
+  opacity: 1;
+}
+
+.tp-intro-brand__logo {
+  display: block;
+  width: min(12.5rem, 72vw);
+  height: auto;
+  max-height: 2.35rem;
 }
 
 .tp-title-lead {
